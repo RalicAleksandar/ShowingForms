@@ -7,8 +7,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
 	{
-		path: 'partners',
-		loadChildren: 'app/login/login.module#LoginComponent',
+		path: 'login',
+		loadChildren: './login/login.module#LoginModule',
 	},
 	{ path: '**', component: NotFoundComponent }
 ];

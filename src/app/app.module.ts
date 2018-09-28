@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavBarModule } from './nav-bar/nav-bar.module';
 import { AppRoutingModule } from './app-routing.module';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
@@ -14,7 +17,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 	imports: [
 		BrowserModule,
 		NavBarModule,
-		AppRoutingModule
+		AppRoutingModule,
+		NgbModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
