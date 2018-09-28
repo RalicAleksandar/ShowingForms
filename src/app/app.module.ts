@@ -6,6 +6,7 @@ import { NavBarModule } from './nav-bar/nav-bar.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -18,7 +19,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 		BrowserModule,
 		NavBarModule,
 		AppRoutingModule,
-		NgbModule
+		NgbModule,
+		AngularFontAwesomeModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
