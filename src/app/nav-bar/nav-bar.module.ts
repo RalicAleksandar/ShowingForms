@@ -3,9 +3,12 @@ import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './header/header.component';
 
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 @NgModule({
 	imports: [
-		CommonModule
+		CommonModule,
+		AngularFontAwesomeModule
 	],
 	exports: [
 		LayoutComponent

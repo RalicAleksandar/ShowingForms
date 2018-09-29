@@ -10,6 +10,10 @@ const routes: Routes = [
 		path: 'login',
 		loadChildren: './login/login.module#LoginModule',
 	},
+	{
+		path: 'forms',
+		loadChildren: './forms/forms.module#FormsModule',
+	},
 	{ path: '**', component: NotFoundComponent }
 ];
 
