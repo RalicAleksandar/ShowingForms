@@ -7,6 +7,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
 	{
+		path: '',
+		loadChildren: './forms/forms.module#FormsModule',
+	},
+	{
 		path: 'login',
 		loadChildren: './login/login.module#LoginModule',
 	},
