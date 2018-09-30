@@ -5,12 +5,14 @@ import { FormDetailsComponent } from './form-details/form-details.component';
 import { FormComponent } from './form/form.component';
 import { SubmittedFormsComponent } from './submitted-forms/submitted-forms.component';
 import { FormsRoutingModule } from './forms-routing.module';
-import { SubmittedFormComponent } from './submitted-form/submitted-form.component';
+import { SubmittedFormComponent } from './submitted-form/submitted-form.component'; 
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
 	imports: [
 		CommonModule,
-		FormsRoutingModule
+		FormsRoutingModule,
+		AngularFontAwesomeModule
 	],
 	declarations: [FormsListComponent, FormDetailsComponent, FormComponent, SubmittedFormsComponent, SubmittedFormComponent]
 })
