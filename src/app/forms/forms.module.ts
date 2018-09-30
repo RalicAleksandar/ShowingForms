@@ -7,6 +7,7 @@ import { SubmittedFormsComponent } from './submitted-forms/submitted-forms.compo
 import { FormsRoutingModule } from './forms-routing.module';
 import { SubmittedFormComponent } from './submitted-form/submitted-form.component'; 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FormItemComponent } from './form-details/form-item/form-item.component';
 
 @NgModule({
 	imports: [
@@ -14,6 +15,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 		FormsRoutingModule,
 		AngularFontAwesomeModule
 	],
-	declarations: [FormsListComponent, FormDetailsComponent, FormComponent, SubmittedFormsComponent, SubmittedFormComponent]
+	declarations: [FormsListComponent, FormDetailsComponent, FormComponent, SubmittedFormsComponent, SubmittedFormComponent, FormItemComponent]
 })
 export class FormsModule { }
