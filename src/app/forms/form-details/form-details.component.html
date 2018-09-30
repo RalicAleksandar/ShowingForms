@@ -5,16 +5,14 @@
 			<input type="text" class="form-control" id="formName" placeholder="Enter form name">
 		</div>
 		<div class="items">
-			<app-form-item [type]="0"></app-form-item>
-			<app-form-item [type]="1"></app-form-item>
-			<app-form-item [type]="0"></app-form-item>
+			<app-form-item *ngFor="let item of form.items" [data]="item"></app-form-item>
 		</div>
-		<button class="btn btn-secondary">
+		<button type="button" class="btn btn-secondary" (click)="addInput()">
 			<fa name="plus"></fa> Add input
 		</button>
-		<button class="btn btn-secondary">
+		<button type="button" class="btn btn-secondary" (click)="addCheckbox()">
 			<fa name="plus"></fa> Add checkbox
 		</button>
-		<button type="submit" class="btn btn-primary submit">Submit</button>
+		<button type="submit" class="btn btn-primary submit">Save</button>
 	</form>
 </div>

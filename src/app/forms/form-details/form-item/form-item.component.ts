@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormItem } from '../../model/form';
 
 @Component({
 	selector: 'app-form-item',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FormItemComponent implements OnInit {
 
-	@Input() type: number;
+	@Input() data: FormItem;
 
 	constructor() { }
 
