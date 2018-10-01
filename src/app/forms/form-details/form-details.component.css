@@ -1,5 +1,6 @@
 .content button.btn-secondary {
-	margin-right: 25px;
+	margin-left: 25px;
+	float: right;
 }
 
 .submit {

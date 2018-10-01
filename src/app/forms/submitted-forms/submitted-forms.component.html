@@ -1,22 +1,7 @@
 <div class="content">
-  <div class="form shadow">
-    <span class="name">Forma 1</span>
-    <span class="submitter">( Aleksandar Ralic )</span>
-    <fa name="eye"></fa>
-  </div>
-  <div class="form shadow">
-    <span class="name">Forma 1</span>
-    <span class="submitter">( Aleksandar Ralic )</span>
-    <fa name="eye"></fa>
-  </div>
-  <div class="form shadow">
-    <span class="name">Forma 1</span>
-    <span class="submitter">( Aleksandar Ralic )</span>
-    <fa name="eye"></fa>
-  </div>
-  <div class="form shadow">
-    <span class="name">Forma 1</span>
-    <span class="submitter">( Aleksandar Ralic )</span>
+  <div class="form shadow" *ngFor="let form of forms" (click)="viewForm(form)">
+    <span class="name">{{form.formName}}</span>
+    <span class="submitter">( {{form.submittedBy}} )</span>
     <fa name="eye"></fa>
   </div>
 </div>

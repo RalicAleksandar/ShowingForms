@@ -1,3 +1,31 @@
-<p>
-  submitted-form works!
-</p>
+<div *ngIf="!!form" class="content">
+	<div>
+		<h1>{{form.formName}}</h1>
+		<h1>
+			{{form.submittedBy}}
+		</h1>
+		<h4>{{form.submittedAt| date}}</h4>
+	</div>
+	<div *ngFor="let item of form.items; let i=index">
+		<div [ngSwitch]="item.type">
+			<div *ngSwitchCase="0">
+				<div class="input-group input-group-default">
+					<div class="input-group-prepend">
+						<span class="input-group-text">{{item.name}}</span>
+					</div>
+					<input type="text" [value]="item.value" class="form-control" disabled>
+				</div>
+			</div>
+			<div *ngSwitchCase="1">
+				<div class="input-group input-group-default">
+					<div class="input-group-prepend">
+						<span class="input-group-text">{{item.name}}</span>
+					</div>
+					<fa *ngIf="!!item.value" name="check"></fa>
+					<fa *ngIf="!item.value" name="times"></fa>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

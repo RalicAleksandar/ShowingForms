@@ -18,6 +18,23 @@ export class FormItem {
 	}
 }
 
+export interface SubmittedFormSummary {
+	id: string;
+	formName: string;
+	submittedBy: string;
+	submittedAt: Date;
+}
+
+export interface SubmittedForm extends SubmittedFormSummary {
+	items: ItemValue[];
+}
+
+export interface ItemValue {
+	type: ItemType;
+	name: string;
+	value: string | boolean;
+}
+
 export enum ItemType {
 	INPUT,
 	CHECKBOX

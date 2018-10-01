@@ -1,4 +1,15 @@
 <div class="content">
+	<div class="buttons">
+		<button type="button" class="btn btn-link" (click)="back()">
+			<fa name="arrow-left"></fa> Back
+		</button>
+		<button type="button" class="btn btn-secondary" (click)="addInput()">
+			<fa name="plus"></fa> Add input
+		</button>
+		<button type="button" class="btn btn-secondary" (click)="addCheckbox()">
+			<fa name="plus"></fa> Add checkbox
+		</button>
+	</div>
 	<form>
 		<div class="form-group">
 			<label for="formName">Form name</label>
@@ -7,12 +18,6 @@
 		<div class="items">
 			<app-form-item *ngFor="let item of form.items" [data]="item"></app-form-item>
 		</div>
-		<button type="button" class="btn btn-secondary" (click)="addInput()">
-			<fa name="plus"></fa> Add input
-		</button>
-		<button type="button" class="btn btn-secondary" (click)="addCheckbox()">
-			<fa name="plus"></fa> Add checkbox
-		</button>
 		<button type="submit" class="btn btn-primary submit">Save</button>
 	</form>
 </div>
