@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { SubmittedFormSummary, SubmittedForm, ItemType } from '../model/form';
+import { SubmittedFormSummary, SubmittedForm, ItemType, Form } from '../model/form';
 import { of } from 'rxjs/Observable/of';
 
 @Injectable({
@@ -9,6 +9,34 @@ import { of } from 'rxjs/Observable/of';
 export class FormService {
 
 	constructor() { }
+
+	public getForm(id: string): Observable<Form> {
+		const f = new Form();
+		f.name = 'Tralalal';
+		f.items = [
+			{
+				label: 'l1',
+				required: true,
+				type: ItemType.INPUT
+			},
+			{
+				label: 'l4',
+				required: false,
+				type: ItemType.INPUT
+			},
+			{
+				label: 'l2',
+				required: true,
+				type: ItemType.INPUT
+			},
+			{
+				label: 'l3',
+				required: true,
+				type: ItemType.CHECKBOX
+			}
+		];
+		return of(f);
+	}
 
 	public getSubmittedForms(): Observable<SubmittedFormSummary[]> {
 		return of([
