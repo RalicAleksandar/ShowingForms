@@ -24,4 +24,8 @@ export class FormDetailsComponent implements OnInit {
 	addCheckbox(): void {
 		this.form.items.push(new FormItem(ItemType.CHECKBOX));
 	}
+
+	removeItem(idx: number): void {
+		this.form.items.splice(idx, 1);
+	}
 }

@@ -16,7 +16,7 @@
 			<input type="text" class="form-control" id="formName" placeholder="Enter form name">
 		</div>
 		<div class="items">
-			<app-form-item *ngFor="let item of form.items" [data]="item"></app-form-item>
+			<app-form-item *ngFor="let item of form.items; let idx = index" [data]="item" (removeItem)="removeItem(idx)"></app-form-item>
 		</div>
 		<button type="submit" class="btn btn-primary submit">Save</button>
 	</form>
