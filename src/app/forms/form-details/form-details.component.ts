@@ -1,5 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { FormItem, Form, ItemType } from '../model/form';
+import { ActivatedRoute } from '@angular/router';
+import { FormService } from '../service/form.service';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/Observable/of';
 
 @Component({
 	selector: 'app-form-details',
@@ -10,11 +14,22 @@ export class FormDetailsComponent implements OnInit {
 
 	form: Form;
 
-	constructor() {
-		this.form = new Form();
-	}
+	constructor(
+		private activatedRoute: ActivatedRoute,
+		private formService: FormService,
+		private cd: ChangeDetectorRef
+	) { }
 
 	ngOnInit(): void {
+		this.loadForm().subscribe(result => {
+			this.form = result;
+			this.cd.detectChanges();
+		});
+	}
+
+	loadForm(): Observable<Form> {
+		const id = this.activatedRoute.snapshot.params['id'];
+		return !!id ? this.formService.getForm(id) : of(new Form());
 	}
 
 	addInput(): void {

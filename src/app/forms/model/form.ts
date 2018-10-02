@@ -1,4 +1,5 @@
 export class Form {
+	id: string;
 	name: string;
 	items: FormItem[];
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { SubmittedFormSummary, SubmittedForm, ItemType, Form } from '../model/form';
 import { of } from 'rxjs/Observable/of';
+import { SubmittedFormSummary, SubmittedForm, ItemType, Form } from '../model/form';
 
 @Injectable({
 	providedIn: 'root'
@@ -9,6 +9,13 @@ import { of } from 'rxjs/Observable/of';
 export class FormService {
 
 	constructor() { }
+
+	public getFomrs(): Observable<Form[]> {
+		const f = new Form();
+		f.id = 'asddd';
+		f.name = 'Tralalal23';
+		return of([f, f, f, f, f]);
+	}
 
 	public getForm(id: string): Observable<Form> {
 		const f = new Form();

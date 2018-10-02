@@ -3,11 +3,11 @@
 		<label>Input</label>
 		<fa class="btn-remove" (click)="remove()" name="minus-circle"></fa>
 		<div class="input-group mb-3">
-			<input type="text" class="form-control" placeholder="Enter label name for inupt field">
+			<input type="text" class="form-control" [(ngModel)]="data.label" placeholder="Enter label name for inupt field">
 			<div class="input-group-append">
 				<div class="input-group-text">
 					<span class="required-label">Required</span>
-					<input type="checkbox" aria-label="Checkbox for following text input">
+					<input type="checkbox" [(ngModel)]="data.required" aria-label="Checkbox for following text input">
 				</div>
 			</div>
 		</div>
@@ -16,7 +16,7 @@
 		<label>Checkbox</label>
 		<fa class="btn-remove" (click)="remove()" name="minus-circle"></fa>	
 		<div class="input-group mb-3">
-			<input type="text" class="form-control" placeholder="Enter label name for checkbox">
+			<input type="text" class="form-control" [(ngModel)]="data.label" placeholder="Enter label name for checkbox">
 		</div>
 	</div>
 </div>

@@ -8,7 +8,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
 	{
 		path: '',
-		loadChildren: './forms/forms.module#FormsModule',
+		loadChildren: './forms/form.module#FormModule',
 	},
 	{
 		path: 'login',
@@ -16,7 +16,7 @@ const routes: Routes = [
 	},
 	{
 		path: 'forms',
-		loadChildren: './forms/forms.module#FormsModule',
+		loadChildren: './forms/form.module#FormModule',
 	},
 	{ path: '**', component: NotFoundComponent }
 ];

@@ -1,18 +1,6 @@
 <div class="content">
-  <div class="form shadow">
-    <span class="name">Forma 1</span>
-    <fa name="edit"></fa>
-  </div>
-  <div class="form shadow">
-    <span class="name">Forma 1</span>
-    <fa name="edit"></fa>
-  </div>
-  <div class="form shadow">
-    <span class="name">Forma 1</span>
-    <fa name="edit"></fa>
-  </div>
-  <div class="form shadow">
-    <span class="name">Forma 1</span>
+  <div *ngFor="let form of forms" class="form shadow" (click)="openForm(form)">
+    <span class="name">{{form.name}}</span>
     <fa name="edit"></fa>
   </div>
 </div>

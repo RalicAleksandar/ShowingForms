@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -20,7 +21,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 		NavBarModule,
 		AppRoutingModule,
 		NgbModule,
-		AngularFontAwesomeModule
+		AngularFontAwesomeModule,
+		FormsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
