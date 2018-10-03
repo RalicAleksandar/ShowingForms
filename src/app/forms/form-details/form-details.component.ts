@@ -12,7 +12,7 @@ import { of } from 'rxjs/Observable/of';
 })
 export class FormDetailsComponent implements OnInit {
 
-	form: Form;
+	form: Form = null;
 
 	constructor(
 		private activatedRoute: ActivatedRoute,

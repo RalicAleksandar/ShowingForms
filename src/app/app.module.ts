@@ -10,6 +10,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
 		AppRoutingModule,
 		NgbModule,
 		AngularFontAwesomeModule,
-		FormsModule
+		FormsModule,
+		HttpClientModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

@@ -18,7 +18,14 @@ const routes: Routes = [
 		path: 'forms',
 		loadChildren: './forms/form.module#FormModule',
 	},
-	{ path: '**', component: NotFoundComponent }
+	{
+		path: 'not-found',
+		component: NotFoundComponent
+	},
+	{
+		path: '**',
+		component: NotFoundComponent
+	}
 ];
 
 @NgModule({
