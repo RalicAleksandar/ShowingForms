@@ -1,30 +1,28 @@
 <div *ngIf="!!form" class="content">
 	<div>
-		<h1>{{form.formName}}</h1>
+		<h1>{{form.name}}</h1>
 		<h1>
-			{{form.submittedBy}}
+			{{formValues.submittedBy}}
 		</h1>
-		<h4>{{form.submittedAt| date}}</h4>
+		<h4>{{formValues.submittedAt| date}}</h4>
 	</div>
 	<div *ngFor="let item of form.items; let i=index">
 		<div [ngSwitch]="item.type">
 			<div *ngSwitchCase="0">
 				<div class="input-group input-group-default">
 					<div class="input-group-prepend">
-						<span class="input-group-text">{{item.name}}</span>
+						<span class="input-group-text">{{item.label}}</span>
 					</div>
-					<input type="text" [value]="item.value" class="form-control" disabled>
+					<input type="text" [(ngModel)]="formValues.values[i]" [name]="'item_ + i'" class="form-control" disabled>
 				</div>
 			</div>
 			<div *ngSwitchCase="1">
-				<div class="input-group input-group-default">
-					<div class="input-group-prepend">
-						<span class="input-group-text">{{item.name}}</span>
-					</div>
-					<fa *ngIf="!!item.value" name="check"></fa>
-					<fa *ngIf="!item.value" name="times"></fa>
+				<div class="form-check">
+					<input class="form-check-input" [(ngModel)]="formValues.values[i]" [name]="'item_ + i'" type="checkbox" id="invalidCheck3" disabled>
+					<label class="form-check-label" for="invalidCheck3">
+						{{item.label}}
+					</label>
 				</div>
-
 			</div>
 		</div>
 	</div>

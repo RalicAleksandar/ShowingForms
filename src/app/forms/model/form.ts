@@ -20,20 +20,15 @@ export class FormItem {
 }
 
 export interface SubmittedFormSummary {
-	id: string;
-	formName: string;
+	id?: string;
+	formName?: string;
 	submittedBy: string;
-	submittedAt: Date;
+	submittedAt?: Date;
 }
 
 export interface SubmittedForm extends SubmittedFormSummary {
-	items: ItemValue[];
-}
-
-export interface ItemValue {
-	type: ItemType;
-	name: string;
-	value: string | boolean;
+	formId: string;
+	values: string[];
 }
 
 export enum ItemType {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SubmittedForm } from '../model/form';
+import { SubmittedForm, Form } from '../model/form';
 import { FormService } from '../service/form.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { FormService } from '../service/form.service';
 })
 export class SubmittedFormComponent implements OnInit {
 
-	form: SubmittedForm = null;
+	form: Form = null;
+	formValues: SubmittedForm = null;
 	constructor(
 		private activatedRoute: ActivatedRoute,
 		private formService: FormService,
@@ -19,7 +20,10 @@ export class SubmittedFormComponent implements OnInit {
 	ngOnInit(): void {
 
 		this.formService.getSubmittedForm(this.activatedRoute.snapshot.params['id']).subscribe(result => {
-			this.form = result;
+			this.formValues = result;
+			this.formService.getForm(this.formValues.formId).subscribe(result2 => {
+				this.form = result2;
+			});
 		});
 	}
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { FormItem, Form, ItemType } from '../model/form';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormService } from '../service/form.service';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/Observable/of';
@@ -19,6 +19,7 @@ export class FormDetailsComponent implements OnInit {
 	constructor(
 		private activatedRoute: ActivatedRoute,
 		private formService: FormService,
+		private router: Router,
 		private cd: ChangeDetectorRef
 	) { }
 
@@ -49,9 +50,13 @@ export class FormDetailsComponent implements OnInit {
 
 	save(): void {
 		if (this.edit) {
-			this.formService.updateForm(this.form).subscribe();
+			this.formService.updateForm(this.form).subscribe(this.goBack);
 		} else {
-			this.formService.createForm(this.form).subscribe();
+			this.formService.createForm(this.form).subscribe(this.goBack);
 		}
+	}
+
+	private goBack = () => {
+		this.router.navigate(['forms']).then();
 	}
 }
