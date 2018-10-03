@@ -43,4 +43,8 @@ export class FormDetailsComponent implements OnInit {
 	removeItem(idx: number): void {
 		this.form.items.splice(idx, 1);
 	}
+
+	create(): void {
+		this.formService.createForm(this.form).subscribe();
+	}
 }

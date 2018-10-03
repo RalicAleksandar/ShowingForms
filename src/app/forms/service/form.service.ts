@@ -22,6 +22,10 @@ export class FormService {
 		return this.httpService.get('form/' + id);
 	}
 
+	public createForm(form: Form): Observable<any> {
+		return this.httpService.post('form', form);
+	}
+
 	public getSubmittedForms(): Observable<SubmittedFormSummary[]> {
 		return of([
 			{
