@@ -26,6 +26,10 @@ export class FormService {
 		return this.httpService.post('form', form);
 	}
 
+	public updateForm(form: Form): Observable<any> {
+		return this.httpService.patch('form', form);
+	}
+
 	public getSubmittedForms(): Observable<SubmittedFormSummary[]> {
 		return of([
 			{

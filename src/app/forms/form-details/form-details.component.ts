@@ -12,6 +12,8 @@ import { of } from 'rxjs/Observable/of';
 })
 export class FormDetailsComponent implements OnInit {
 
+	private edit: boolean;
+
 	form: Form = null;
 
 	constructor(
@@ -29,6 +31,7 @@ export class FormDetailsComponent implements OnInit {
 
 	loadForm(): Observable<Form> {
 		const id = this.activatedRoute.snapshot.params['id'];
+		this.edit = !!id;
 		return !!id ? this.formService.getForm(id) : of(new Form());
 	}
 
@@ -44,7 +47,11 @@ export class FormDetailsComponent implements OnInit {
 		this.form.items.splice(idx, 1);
 	}
 
-	create(): void {
-		this.formService.createForm(this.form).subscribe();
+	save(): void {
+		if (this.edit) {
+			this.formService.updateForm(this.form).subscribe();
+		} else {
+			this.formService.createForm(this.form).subscribe();
+		}
 	}
 }
