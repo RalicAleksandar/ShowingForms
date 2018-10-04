@@ -11,8 +11,8 @@ import { FormService } from '../service/form.service';
 export class FormComponent implements OnInit {
 
 	form: Form = null;
-
 	formValues: SubmittedForm;
+
 	constructor(
 		private activatedRoute: ActivatedRoute,
 		private formService: FormService,
@@ -35,6 +35,17 @@ export class FormComponent implements OnInit {
 		this.formValues.submittedAt = new Date();
 		this.formService.submitForm(this.formValues).subscribe(() => {
 			this.router.navigate(['submitted']).then();
+		});
+	}
+
+
+	get isValid(): boolean {
+		if (this.formValues.submittedBy.length === 0) {
+			return false;
+		}
+
+		return this.formValues.values.every((value, index) => {
+			return !this.form.items[index].required || value.length > 0;
 		});
 	}
 

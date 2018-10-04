@@ -16,6 +16,8 @@ export class FormItem {
 
 	constructor(type: ItemType) {
 		this.type = type;
+		this.label = '';
+		this.required = false;
 	}
 }
 

@@ -6,6 +6,9 @@
 				<span class="input-group-text">Name</span>
 			</div>
 			<input type="text" [(ngModel)]="formValues.submittedBy" name="submittedBy" class="form-control" required>
+			<div class="input-group-append">
+				<span class="input-group-text">Required</span>
+			</div>
 		</div>
 		<div *ngFor="let item of form.items; let i=index">
 			<div [ngSwitch]="item.type">
@@ -14,12 +17,16 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text">{{item.label}}</span>
 						</div>
-						<input type="text" [(ngModel)]="formValues.values[i]" [name]="'item_ + i'" class="form-control" [required]="item.required">
+						<input type="text" [(ngModel)]="formValues.values[i]" [name]="'item_ + i'" class="form-control">
+						<div class="input-group-append" *ngIf="item.required">
+							<span class="input-group-text">Required</span>
+						</div>
 					</div>
 				</div>
 				<div *ngSwitchCase="1">
 					<div class="form-check">
-						<input class="form-check-input" [(ngModel)]="formValues.values[i]" [name]="'item_ + i'" type="checkbox" value="" id="invalidCheck3">
+						<input class="form-check-input" [(ngModel)]="formValues.values[i]" [name]="'item_ + i'" type="checkbox" value=""
+						 id="invalidCheck3">
 						<label class="form-check-label" for="invalidCheck3">
 							{{item.label}}
 						</label>
@@ -27,6 +34,6 @@
 				</div>
 			</div>
 		</div>
-		<button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+		<button type="submit" class="btn btn-primary" [disabled]="!isValid" (click)="save()">Save</button>
 	</form>
 </div>

@@ -16,4 +16,6 @@
 .form fa {
 	line-height: 56px;
 	float: right;
+	cursor: pointer;
+	margin: 0 15px 
 }

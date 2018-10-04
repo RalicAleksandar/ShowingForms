@@ -26,6 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
 		FormsModule,
 		HttpClientModule
 	],
+	exports: [
+	],
 	providers: [],
 	bootstrap: [AppComponent]
 })

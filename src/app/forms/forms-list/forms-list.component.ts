@@ -26,4 +26,8 @@ export class FormsListComponent implements OnInit {
 		this.router.navigate(['/forms/edit/' + form.id]).then();
 	}
 
+	submitForm(form: Form): void {
+		this.router.navigate(['/submit/' + form.id]).then();
+	}
+
 }

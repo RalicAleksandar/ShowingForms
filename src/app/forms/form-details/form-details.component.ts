@@ -59,4 +59,18 @@ export class FormDetailsComponent implements OnInit {
 	private goBack = () => {
 		this.router.navigate(['forms']).then();
 	}
+
+	get isValid(): boolean {
+		const empty = this.form.name.length === 0 ||
+			this.form.items.length === 0;
+		if (empty) {
+			return false;
+		}
+
+		if (this.form.items.length > 0) {
+			return this.form.items.every(item => item.label.length > 0);
+		}
+
+		return false;
+	}
 }

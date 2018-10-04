@@ -9,13 +9,16 @@ import { SubmittedFormComponent } from './submitted-form/submitted-form.componen
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormItemComponent } from './form-details/form-item/form-item.component';
 import { FormsModule } from '@angular/forms';
+import { IsAuthenticatedDirective } from '../nav-bar/directives/is-authenticated.directive';
+import { NavBarModule } from '../nav-bar/nav-bar.module';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		FormsRoutingModule,
 		AngularFontAwesomeModule,
-		FormsModule
+		FormsModule,
+		NavBarModule
 	],
 	declarations: [FormsListComponent, FormDetailsComponent, FormComponent, SubmittedFormsComponent, SubmittedFormComponent, FormItemComponent]
 })

@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './header/header.component';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { IsAuthenticatedDirective } from './directives/is-authenticated.directive';
 
 @NgModule({
 	imports: [
@@ -11,8 +12,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 		AngularFontAwesomeModule
 	],
 	exports: [
-		LayoutComponent
+		LayoutComponent,
+		IsAuthenticatedDirective
 	],
-	declarations: [LayoutComponent, HeaderComponent]
+	declarations: [LayoutComponent, HeaderComponent, IsAuthenticatedDirective]
 })
 export class NavBarModule { }

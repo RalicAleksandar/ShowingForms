@@ -1,6 +1,6 @@
 <div class="content">
 	<div class="buttons">
-		<button type="button" class="btn btn-link" (click)="back()">
+		<button type="button" class="btn btn-link" (click)="goBack()">
 			<fa name="arrow-left"></fa> Back
 		</button>
 		<button type="button" class="btn btn-secondary" (click)="addInput()">
@@ -18,6 +18,6 @@
 		<div class="items">
 			<app-form-item *ngFor="let item of form.items; let idx = index" [data]="item" (removeItem)="removeItem(idx)"></app-form-item>
 		</div>
-		<button type="submit" class="btn btn-primary submit" (click)="save()">Save</button>
+		<button type="submit" class="btn btn-primary submit" [disabled]="!isValid" (click)="save()">Save</button>
 	</form>
 </div>

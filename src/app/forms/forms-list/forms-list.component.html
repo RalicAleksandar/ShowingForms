@@ -1,6 +1,7 @@
 <div class="content">
-  <div *ngFor="let form of forms" class="form shadow" (click)="openForm(form)">
+  <div *ngFor="let form of forms" class="form shadow">
     <span class="name">{{form.name}}</span>
-    <fa name="edit"></fa>
+    <fa name="eye" (click)="openForm(form)" appIsAuthenticated></fa>
+    <fa name="edit" (click)="submitForm(form)"></fa>
   </div>
 </div>
